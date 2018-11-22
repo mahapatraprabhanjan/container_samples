@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  sql.data:
+    image: microsoft/mssql-server-linux:2017-latest
+
+  identity.api:
+    image: ${DOCKER_REGISTRY}identityapi
+    build:
+      context: .
+      dockerfile: src/Services/Identity.Api/Dockerfile
