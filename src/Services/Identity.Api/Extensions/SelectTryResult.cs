@@ -14,7 +14,7 @@ namespace Identity.Api.Extensions
         {
             Source = source;
             Result = result;
-            Exception = exception;
+            CaughtException = exception;
         }
     }
 }

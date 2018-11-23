@@ -7,9 +7,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{44D3EE56-7F8
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{01498612-F09B-48BC-84A1-6DFDEE65AABB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.Api", "src\Services\Identity.Api\Identity.Api.csproj", "{56EDE4F6-2871-4447-8207-B2823B3EDFF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity.Api", "src\Services\Identity.Api\Identity.Api.csproj", "{56EDE4F6-2871-4447-8207-B2823B3EDFF8}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{22E7E318-484C-4743-879C-60B19B3A20B9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{B66C2E2B-71BC-409E-BD70-F6C067DB5264}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,7 +33,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{01498612-F09B-48BC-84A1-6DFDEE65AABB} = {44D3EE56-7F81-4F31-901E-BDFDD9A2BA75}
-		{56EDE4F6-2871-4447-8207-B2823B3EDFF8} = {01498612-F09B-48BC-84A1-6DFDEE65AABB}
+		{56EDE4F6-2871-4447-8207-B2823B3EDFF8} = {B66C2E2B-71BC-409E-BD70-F6C067DB5264}
+		{B66C2E2B-71BC-409E-BD70-F6C067DB5264} = {01498612-F09B-48BC-84A1-6DFDEE65AABB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {362E2948-FF55-4655-AC77-BA49880991D5}
