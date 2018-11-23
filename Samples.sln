@@ -15,6 +15,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity.Api", "src\Service
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{EBB69A6A-7E30-4944-90A0-52AAB228686D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebHost", "WebHost", "{C6DCB53E-C7A4-4EA3-84F1-AC42BA424FA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebHost.Customization", "src\BuildingBlocks\WebHost\WebHost.Customization\WebHost.Customization.csproj", "{0A85CA08-596A-492D-9F35-A7831C0EA07A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,10 @@ Global
 		{8AE9D07C-394C-4085-9BBC-5A694EC04678}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AE9D07C-394C-4085-9BBC-5A694EC04678}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AE9D07C-394C-4085-9BBC-5A694EC04678}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A85CA08-596A-492D-9F35-A7831C0EA07A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A85CA08-596A-492D-9F35-A7831C0EA07A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A85CA08-596A-492D-9F35-A7831C0EA07A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A85CA08-596A-492D-9F35-A7831C0EA07A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,6 +46,8 @@ Global
 		{B66C2E2B-71BC-409E-BD70-F6C067DB5264} = {01498612-F09B-48BC-84A1-6DFDEE65AABB}
 		{8AE9D07C-394C-4085-9BBC-5A694EC04678} = {B66C2E2B-71BC-409E-BD70-F6C067DB5264}
 		{EBB69A6A-7E30-4944-90A0-52AAB228686D} = {44D3EE56-7F81-4F31-901E-BDFDD9A2BA75}
+		{C6DCB53E-C7A4-4EA3-84F1-AC42BA424FA3} = {EBB69A6A-7E30-4944-90A0-52AAB228686D}
+		{0A85CA08-596A-492D-9F35-A7831C0EA07A} = {C6DCB53E-C7A4-4EA3-84F1-AC42BA424FA3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {362E2948-FF55-4655-AC77-BA49880991D5}

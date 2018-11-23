@@ -5,5 +5,7 @@
         public string MvcClient { get; set; }
 
         public bool UseCustomizationData { get; set; }
+
+        public bool UseTestData { get; set; }
     }
 }

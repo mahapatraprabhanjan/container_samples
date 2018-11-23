@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore;
+﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using IdentityServer4.EntityFramework.DbContexts;
+using Identity.Api.Data;
+using System.IO;
+using Microsoft.Extensions.Configuration;
 
 namespace Identity.Api
 {
@@ -18,13 +14,38 @@ namespace Identity.Api
         public static void Main(string[] args)
         {
             BuildWebHost(args)
-                .MigrateDbContext<PersistedGrantDbContext>((_, __) => { })
-                .Build().Run();
+                .MigrateDbContext<ApplicationDbContext>((context, services) =>
+                {
+                    var env = services.GetService<IHostingEnvironment>();
+                    var logger = services.GetService<ILogger<ApplicationDbContextSeed>>();
+                    var settings = services.GetService<IOptions<AppSettings>>();
+
+                    if (settings.Value.UseTestData)
+                    {
+                        new ApplicationDbContextSeed()
+                        .SeedAsync(context, env, logger, settings)
+                        .Wait();
+                    }
+                })
+                .Run();
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseKestrel()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseIISIntegration()
                 .UseStartup<Startup>()
+                .ConfigureAppConfiguration((hostingContext, config) => 
+                {
+                    config.AddEnvironmentVariables();
+                })
+                .ConfigureLogging((hostingContext, builder) => 
+                {
+                    builder.AddConfiguration(hostingContext.Configuration.GetSection("Logging"));
+                    builder.AddConsole();
+                    builder.AddDebug();
+                })
                 .Build();
     }
 }
