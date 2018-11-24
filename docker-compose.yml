@@ -5,7 +5,9 @@ services:
     image: microsoft/mssql-server-linux:2017-latest
 
   identity.api:
-    image: ${DOCKER_REGISTRY}identityapi
+    image: samples/identityapi.api:${TAG:-latest}
     build:
       context: .
       dockerfile: src/Services/Identity/Identity.Api/Dockerfile
+    depends_on:
+      - sql.data

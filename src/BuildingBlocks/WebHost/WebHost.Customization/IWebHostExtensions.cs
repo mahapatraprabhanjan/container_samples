@@ -36,9 +36,9 @@ namespace Microsoft.AspNetCore.Hosting
                     retry.Execute(() =>
                     {
                         context.Database.Migrate();
-                    });
 
-                    seeder(context, services);
+                        seeder(context, services);
+                    });                    
                 }
                 catch (Exception ex)
                 {

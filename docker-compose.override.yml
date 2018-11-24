@@ -13,6 +13,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=https://+:443;http://+:80
       - ASPNETCORE_HTTPS_PORT=44336
+      - ConnectionString=${SAMPLES_AZURE_IDENTITYDB:-Server=sql.data;Database=Samples.Identity.Api.IdentityDb;User Id=sa;Password=Pass@word}
     ports:
       - "49489:80"
       - "44336:443"
