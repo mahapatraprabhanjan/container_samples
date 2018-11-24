@@ -8,4 +8,4 @@ services:
     image: ${DOCKER_REGISTRY}identityapi
     build:
       context: .
-      dockerfile: src/Services/Identity.Api/Dockerfile
+      dockerfile: src/Services/Identity/Identity.Api/Dockerfile
